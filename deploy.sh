@@ -33,6 +33,7 @@ docker network create netdata-net 2>/dev/null || echo "Network netdata-net alrea
 echo -e "${YELLOW}Deploying Netdata container...${NC}"
 docker run -d \
   --name netdata \
+  --init \
   --restart unless-stopped \
   --network netdata-net \
   --network-alias netdata \
